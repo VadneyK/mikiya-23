@@ -32,7 +32,7 @@ button{font:inherit;cursor:pointer}
 /* language */
 body[data-lang="en"] .ja{display:none!important}
 body[data-lang="ja"] .en{display:none!important}
-body[data-lang="mix"] .ja.sub{display:block;opacity:.72;font-size:.9em}
+body[data-lang="mix"] .ja.sub{display:block;color:#cdc5ee;font-size:.9em}
 .ja.sub{display:none}
 body[data-lang="ja"] .ja.sub{display:block;opacity:1;font-size:1em}
 
@@ -95,12 +95,12 @@ h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,5vw,46px);l
 /* gallery */
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .chip{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#e9e3ff;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700}
-.chip[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:#fff}
+.chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 .grid{columns:4 220px;column-gap:12px}
 .ph{break-inside:avoid;margin:0 0 12px;border-radius:14px;overflow:hidden;position:relative;cursor:zoom-in;background:#221a4a;transform:rotate(var(--rot,0deg));transition:transform .25s,box-shadow .25s;box-shadow:0 6px 18px rgba(0,0,0,.3)}
 .ph:hover{transform:rotate(0) scale(1.02);box-shadow:0 12px 30px rgba(0,0,0,.45);z-index:2}
 .ph img{width:100%;height:auto}
-.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;font-size:12px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff}
+.ph figcaption{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);padding:5px 9px;font-size:12px;line-height:1.35;background:rgba(20,15,46,.85);border-radius:8px;color:#fff}
 .ph.hide{display:none}
 .lb{position:fixed;inset:0;z-index:80;background:rgba(10,7,25,.94);display:none;align-items:center;justify-content:center;padding:16px}
 .lb.on{display:flex}
@@ -221,7 +221,7 @@ footer .px{font-size:9px;color:var(--gold);display:block;margin-bottom:10px}
     <h2><span class="en">Now playing</span><span class="ja">動画コーナー</span></h2>
     <p class="lead en">Including the one you found in your camera roll and had to share. 🤣</p>
     <p class="lead ja">カメラロールで見つけて送ってくれたあの動画も。🤣</p>
-    <div class="vids" id="vids"></div>
+    <div class="vids" id="vids" tabindex="0" aria-label="Videos"></div>
   </div>
 </section>
 
@@ -288,7 +288,7 @@ footer .px{font-size:9px;color:var(--gold);display:block;margin-bottom:10px}
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <button class="x" aria-label="Close">✕</button><button class="p" aria-label="Previous">‹</button><button class="n" aria-label="Next">›</button>
-  <img id="lbimg" alt=""><div class="cap" id="lbcap"></div>
+  <img id="lbimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><div class="cap" id="lbcap"></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
